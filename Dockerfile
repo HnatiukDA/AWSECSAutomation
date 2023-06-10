@@ -3,9 +3,10 @@ FROM golang:1.20.5-bullseye AS builder
 ARG VERSION=dev
 
 WORKDIR /go/src/app
-COPY main.go .
-RUN go mod init main \
-    && go mod tidy
+COPY main.go go.mod go.sum ./
+RUN go mod download
+# go mod init main \
+#     && go mod tidy
 
 RUN go build -o main -ldflags="-s -w -X=main.version=${VERSION}" main.go
 
