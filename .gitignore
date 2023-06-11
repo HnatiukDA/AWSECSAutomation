@@ -5,3 +5,4 @@
 .vscode
 secrets.tf
 *.tfvars
+.terraform*
