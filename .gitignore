@@ -1,6 +1,7 @@
 *test_*
 *.txt
 *.csv
-*terraform*
+*test*
 .vscode
 secrets.tf
+*.tfvars
